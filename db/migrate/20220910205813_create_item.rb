@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class CreateItem < ActiveRecord::Migration[6.1]
   def change
     create_table :items do |t|
-      t.string  :title
+      t.string :title
       t.text :description
       t.integer :price
       t.timestamps
