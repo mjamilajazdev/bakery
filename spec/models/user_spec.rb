@@ -16,4 +16,17 @@ RSpec.describe User, type: :model do
     user = build(:user, email: nil)
     expect(user).not_to be_valid
   end
+
+  it "has none to begin with" do
+    expect(User.count).to eq 0
+  end
+
+  it "has one after adding one" do
+    create(:user)
+    expect(User.count).to eq 1
+  end
+
+  it "has none after one was created in a previous example" do
+    expect(User.count).to eq 0
+  end
 end
